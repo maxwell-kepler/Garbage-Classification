@@ -1,0 +1,58 @@
+Using device: cuda
+Training set size: 11629
+Validation set size: 1800
+Test set size: 3432
+
+Epoch 1/10
+train Loss: 0.3709 Acc: 0.8680
+val Loss: 0.1650 Acc: 0.9439
+Saved model, reset early stopping counter
+
+Epoch 2/10
+train Loss: 0.2477 Acc: 0.9144
+val Loss: 0.1376 Acc: 0.9489
+Saved model, reset early stopping counter
+
+Epoch 3/10
+train Loss: 0.2131 Acc: 0.9249
+val Loss: 0.1539 Acc: 0.9444
+EarlyStopping counter: 1 out of 3
+
+Epoch 4/10
+train Loss: 0.2062 Acc: 0.9301
+val Loss: 0.1242 Acc: 0.9583
+Saved model, reset early stopping counter
+
+Epoch 5/10
+train Loss: 0.1891 Acc: 0.9370
+val Loss: 0.1197 Acc: 0.9600
+Saved model, reset early stopping counter
+
+Epoch 6/10
+train Loss: 0.1718 Acc: 0.9412
+val Loss: 0.1173 Acc: 0.9594
+Saved model, reset early stopping counter
+
+Epoch 7/10
+train Loss: 0.1622 Acc: 0.9440
+val Loss: 0.1091 Acc: 0.9617
+Saved model, reset early stopping counter
+
+Epoch 8/10
+train Loss: 0.1587 Acc: 0.9442
+val Loss: 0.1210 Acc: 0.9611
+EarlyStopping counter: 1 out of 3
+
+Epoch 9/10
+train Loss: 0.1456 Acc: 0.9504
+val Loss: 0.1399 Acc: 0.9539
+EarlyStopping counter: 2 out of 3
+
+Epoch 10/10
+train Loss: 0.1425 Acc: 0.9505
+val Loss: 0.1184 Acc: 0.9594
+EarlyStopping counter: 3 out of 3
+Early stopping triggered after 10 epochs
+
+Evaluating on test set
+Test Accuracy: 0.9540

@@ -68,7 +68,7 @@ class GarbageClassifierFusion(nn.Module):
         
         # Process text through DistilBERT and projection
         text_outputs = self.text_encoder(**text_inputs).last_hidden_state
-        text_embeddings = text_outputs[:, 0, :]  # Use [CLS] token
+        text_embeddings = torch.mean(text_outputs, dim=1)
         text_embeddings = self.text_projector(text_embeddings)
         
         fused_features = torch.cat([img_embeddings, text_embeddings], dim=1)
@@ -106,16 +106,15 @@ class MultimodalGarbageDataset(torch.utils.data.Dataset):
         }
     
     def _get_description_from_filename(self, file_path):
-        filename = file_path.split('/')[-1]
-        filename = filename.split('.')[0]
+        filename = file_path.split('/')[-1].split('.')[0]
         description = '_'.join(filename.split('_')[:-1])
         description = description.replace('_', ' ')
-        description = ' '.join(description.split())
-        description = description.lower()
-        if not any(material in description for material in ['plastic', 'metal', 'paper', 'glass', 'aluminum']):
-            description = 'unknown material ' + description
-            
-        return description
+        materials = ['plastic', 'metal', 'paper', 'glass', 'aluminum']
+        if not any(material in description for material in materials):
+            class_name = self.image_dataset.classes[self.image_dataset.class_to_idx[file_path.split('/')[-2]]]
+            description = f"{class_name} {description}"
+        
+        return description.lower()
 
 def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=25, patience=5):
     best_loss = float('inf')
@@ -238,7 +237,7 @@ optimizer = optim.AdamW([
     {'params': model.fusion_layers.parameters(), 'lr': 1e-3}
 ], weight_decay=0.01)
 
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.1, patience=3)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=5, T_mult=2, eta_min=1e-6)
 
 # Train the model
 model = train_model(
@@ -247,7 +246,7 @@ model = train_model(
     criterion=criterion,
     optimizer=optimizer,
     scheduler=scheduler,
-    num_epochs=40,
+    num_epochs=10,
     patience=3
 )
 
