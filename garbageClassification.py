@@ -281,5 +281,5 @@ def test_fusion_model(model, test_loader):
 
 
 # Evaluate the model on the test set
-model.load_state_dict(torch.load('best_fusion_model.pth'))
+model.load_state_dict(torch.load('best_fusion_model.pth', weights_only=True))
 test_fusion_model(model, dataloaders["test"])
