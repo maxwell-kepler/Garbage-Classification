@@ -52,7 +52,7 @@ class GarbageClassifierFusion(nn.Module):
         self.text_projector = nn.Sequential(
             nn.Linear(text_embedding_dim, 512),
             nn.ReLU(),
-            nn.Dropout(0.3) #0.3 chosen empirically
+            nn.Dropout(0.2) #0.2 chosen empirically
         )
 
         fusion_dim = 512 + 512 
@@ -132,7 +132,7 @@ class MultimodalGarbageDataset(torch.utils.data.Dataset):
         description = description.replace('_', ' ') # Replace underscores with spaces
         return description.lower() # Convert to lowercase for consistency
 
-def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=25, patience=5):
+def train_model(model, dataloaders, criterion, optimizer, scheduler, num_epochs=25, patience=8):
     best_loss = float('inf')
     early_stopping_counter = 0
     
@@ -267,8 +267,8 @@ criterion = nn.CrossEntropyLoss()
 
 # Use AdamW as an optimizer
 optimizer = optim.AdamW([
-    {'params': model.image_features[6:].parameters(), 'lr': 1e-4},
-    {'params': model.image_projector.parameters(), 'lr': 1e-3},
+    {'params': model.image_features[6:].parameters(), 'lr': 5e-5},
+    {'params': model.image_projector.parameters(), 'lr': 5e-4},
     {'params': model.text_projector.parameters(), 'lr': 1e-3},
     {'params': model.fusion_layers.parameters(), 'lr': 1e-3}
 ], weight_decay=0.01)
