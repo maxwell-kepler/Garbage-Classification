@@ -3,56 +3,121 @@ Training set size: 11629
 Validation set size: 1800
 Test set size: 3432
 
-Epoch 1/10
-train Loss: 0.3709 Acc: 0.8680
-val Loss: 0.1650 Acc: 0.9439
+Epoch 1/25
+train Loss: 0.6823 Acc: 0.7433
+val Loss: 0.4716 Acc: 0.8167
 Saved model, reset early stopping counter
 
-Epoch 2/10
-train Loss: 0.2477 Acc: 0.9144
-val Loss: 0.1376 Acc: 0.9489
+Epoch 2/25
+train Loss: 0.5327 Acc: 0.7994
+val Loss: 0.4302 Acc: 0.8411
 Saved model, reset early stopping counter
 
-Epoch 3/10
-train Loss: 0.2131 Acc: 0.9249
-val Loss: 0.1539 Acc: 0.9444
-EarlyStopping counter: 1 out of 3
-
-Epoch 4/10
-train Loss: 0.2062 Acc: 0.9301
-val Loss: 0.1242 Acc: 0.9583
+Epoch 3/25
+train Loss: 0.4919 Acc: 0.8155
+val Loss: 0.4015 Acc: 0.8467
 Saved model, reset early stopping counter
 
-Epoch 5/10
-train Loss: 0.1891 Acc: 0.9370
-val Loss: 0.1197 Acc: 0.9600
+Epoch 4/25
+train Loss: 0.4781 Acc: 0.8256
+val Loss: 0.4220 Acc: 0.8456
+EarlyStopping counter: 1 out of 8
+
+Epoch 5/25
+train Loss: 0.4408 Acc: 0.8376
+val Loss: 0.3896 Acc: 0.8572
 Saved model, reset early stopping counter
 
-Epoch 6/10
-train Loss: 0.1718 Acc: 0.9412
-val Loss: 0.1173 Acc: 0.9594
+Epoch 6/25
+train Loss: 0.4242 Acc: 0.8419
+val Loss: 0.3618 Acc: 0.8644
 Saved model, reset early stopping counter
 
-Epoch 7/10
-train Loss: 0.1622 Acc: 0.9440
-val Loss: 0.1091 Acc: 0.9617
+Epoch 7/25
+train Loss: 0.4144 Acc: 0.8461
+val Loss: 0.3693 Acc: 0.8556
+EarlyStopping counter: 1 out of 8
+
+Epoch 8/25
+train Loss: 0.3912 Acc: 0.8541
+val Loss: 0.3690 Acc: 0.8467
+EarlyStopping counter: 2 out of 8
+
+Epoch 9/25
+train Loss: 0.3795 Acc: 0.8590
+val Loss: 0.3488 Acc: 0.8689
 Saved model, reset early stopping counter
 
-Epoch 8/10
-train Loss: 0.1587 Acc: 0.9442
-val Loss: 0.1210 Acc: 0.9611
-EarlyStopping counter: 1 out of 3
+Epoch 10/25
+train Loss: 0.3809 Acc: 0.8574
+val Loss: 0.3595 Acc: 0.8606
+EarlyStopping counter: 1 out of 8
 
-Epoch 9/10
-train Loss: 0.1456 Acc: 0.9504
-val Loss: 0.1399 Acc: 0.9539
-EarlyStopping counter: 2 out of 3
+Epoch 11/25
+train Loss: 0.3654 Acc: 0.8631
+val Loss: 0.3498 Acc: 0.8633
+EarlyStopping counter: 2 out of 8
 
-Epoch 10/10
-train Loss: 0.1425 Acc: 0.9505
-val Loss: 0.1184 Acc: 0.9594
-EarlyStopping counter: 3 out of 3
-Early stopping triggered after 10 epochs
+Epoch 12/25
+train Loss: 0.3602 Acc: 0.8665
+val Loss: 0.3406 Acc: 0.8667
+Saved model, reset early stopping counter
+
+Epoch 13/25
+train Loss: 0.3358 Acc: 0.8731
+val Loss: 0.3364 Acc: 0.8722
+Saved model, reset early stopping counter
+
+Epoch 14/25
+train Loss: 0.3406 Acc: 0.8728
+val Loss: 0.3468 Acc: 0.8650
+EarlyStopping counter: 1 out of 8
+
+Epoch 15/25
+train Loss: 0.3327 Acc: 0.8763
+val Loss: 0.3301 Acc: 0.8700
+Saved model, reset early stopping counter
+
+Epoch 16/25
+train Loss: 0.3203 Acc: 0.8801
+val Loss: 0.3323 Acc: 0.8694
+EarlyStopping counter: 1 out of 8
+
+Epoch 17/25
+train Loss: 0.3146 Acc: 0.8838
+val Loss: 0.3555 Acc: 0.8761
+EarlyStopping counter: 2 out of 8
+
+Epoch 18/25
+train Loss: 0.3014 Acc: 0.8879
+val Loss: 0.3445 Acc: 0.8728
+EarlyStopping counter: 3 out of 8
+
+Epoch 19/25
+train Loss: 0.2976 Acc: 0.8895
+val Loss: 0.3428 Acc: 0.8733
+EarlyStopping counter: 4 out of 8
+
+Epoch 20/25
+train Loss: 0.2826 Acc: 0.8946
+val Loss: 0.3537 Acc: 0.8706
+EarlyStopping counter: 5 out of 8
+
+Epoch 21/25
+train Loss: 0.2880 Acc: 0.8918
+val Loss: 0.3595 Acc: 0.8672
+EarlyStopping counter: 6 out of 8
+
+Epoch 22/25
+train Loss: 0.2701 Acc: 0.8968
+val Loss: 0.3628 Acc: 0.8789
+EarlyStopping counter: 7 out of 8
+
+Epoch 23/25
+train Loss: 0.2704 Acc: 0.9014
+val Loss: 0.3605 Acc: 0.8744
+EarlyStopping counter: 8 out of 8
+Early stopping triggered after 23 epochs
 
 Evaluating on test set
-Test Accuracy: 0.9540
+Test Accuracy: 0.8319
